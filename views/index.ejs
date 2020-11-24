@@ -1,0 +1,166 @@
+<nav class="navbar navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="/">
+        <img src="/img/icon.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        WCR
+    </a>
+
+    <div class="right">
+        <div class="navbar-nav">
+            <a class="nav-link active" href="/">Home</a>
+            <a class="nav-link" href="#join" data-spy="scroll" data-target="#join">Join</a>
+            <a class="btn btn-primary" href="#new" data-spy="scroll" data-target="#new">New Room</a>
+        </div>
+    </div>
+</nav>
+
+<div>
+    <% if (typeof success != 'undefined') { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= success %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <% } %>
+    <% if (typeof error != 'undefined') { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= error %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <% } %>
+</div>
+
+<section class="hero">
+    <div class="container">
+        <h1>Welcome to Web Chat Rooms.</h1>
+        <p>Create Rooms and chat with friends fully free. No authentication required.</p>
+    </div>
+</section>
+
+<section>
+    <h1 class="mt-5 mb-3 text-center">Our Features</h1>
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="/img/lock.png" alt="" class="card-img-top">
+                        <h3 class="card-title mt-3">Secure</h3>
+                        <p>It's totally secure.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="/img/rocket.png" alt="" class="card-img-top">
+                        <h3 class="card-title mt-3">Fast</h3>
+                        <p>Very Fast.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="/img/free.png" alt="" class="card-img-top">
+                        <h3 class="card-title mt-3">Free</h3>
+                        <p>It's totally free.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="/img/user.png" alt="" class="card-img-top">
+                        <h3 class="card-title mt-3">No Auth.</h3>
+                        <p>No Login.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-primary text-white py-5" id="join">
+    <div class="container">
+        <h1 class="my-2 text-center mb-2">Join Your Room</h1>
+        <div class="card mx-auto" style="max-width:600px;">
+            <div class="card-body">
+                <form action="/join" method="GET">
+                    <input type="text" name="roomId" placeholder="Enter room id" class="form-control mb-3" required>
+                    <input type="text" name="name" placeholder="Enter your name" class="form-control mb-3" required>
+                    <button type="submit" class="btn btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h1 class="mt-5 mb-3 text-center">Technologies</h1>
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="/img/node.png" alt="" class="card-img-top">
+                        <h3 class="card-title mt-3">Node.js</h3>
+                        <p>Server.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="/img/socketio.png" alt="" class="card-img-top">
+                        <h3 class="card-title mt-3">Sockt.io</h3>
+                        <p>Web socket.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="/img/bootstrap.png" alt="" class="card-img-top">
+                        <h3 class="card-title mt-3">Bootstrap</h3>
+                        <p>CSS Framework.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="/img/bootswatch.png" alt="" class="card-img-top">
+                        <h3 class="card-title mt-3">Bootswatch.</h3>
+                        <p>Bootstrap Theme.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-primary text-white py-5" id="new">
+    <div class="container">
+        <h1 class="my-2 text-center mb-2">Create New Room</h1>
+        <div class="card mx-auto" style="max-width:600px;">
+            <div class="card-body">
+                <form action="/" method="POST">
+                    <input type="text" name="name" placeholder="Enter room name" class="form-control mb-3" required>
+                    <textarea name="description" placeholder="Enter description" class="form-control mb-3" required rows="5"></textarea>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="mt-4">
+    <div>
+        <p class="text-grey text-center">
+            &copy; All right reserved | WCR
+        </p>
+    </div>
+</footer>

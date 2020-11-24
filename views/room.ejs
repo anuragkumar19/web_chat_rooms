@@ -1,0 +1,120 @@
+<main>
+    <button id="myBtn" class="btn btn-primary"><i class="fa fa-bars"></i></button>
+    <div class="my-conatiner">
+        <div class="msg-conatainer">
+            <header>
+                <div class="brand-logo">
+                    <i class="fa fa-comment mr-1" style="font-size: 30px;"></i>
+                    <%= room.name %>
+                </div>
+
+                <div class="user-detail">
+                    <img src="/img/user.png" width="30" alt="" style="filter: invert(1); margin-right: 5px;">
+                    <%= name %>
+                </div>
+            </header>
+            <div class="room-details">
+                <div class="p-3">
+                    <h3><%= room.name %></h3>
+                    <h6 data-toggle="collapse" data-target="#details-collaspe" aria-expanded="false" aria-controls="details-collaspe">Details <i class="fa fa-chevron-down"></i></h6>
+                    <div class="collapse" id="details-collaspe">
+                        <p class="small"><%= room.desc %></p>
+                    </div>
+
+                    <ul class="user-list" id="userList">
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                        <li class="user-card">
+                            <img src="/img/user.png" alt="" width="20">
+                            <span>Anurag Kumar</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messages-cont" id="messages-cont"></div>
+            <div class="message-input">
+                <form id="msgForm">
+                    <div class="myflex">
+                        <input style="box-shadow: none !important;" class="form-control" id="msgInp">
+                        <button class="w-100 mybtn" type="submit"><i class="fa fa-paper-plane"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="loader">
+    <img width="200" src="/img/loader.gif" alt="">
+</div>
+
+
+<script>
+    document.getElementById('myBtn').addEventListener('click', e => document.querySelector('.msg-conatainer .room-details').classList.toggle('active'))
+</script>
+
+<%- contentFor('javascript') %>
+<script>
+    const roomId = "<%- room._id %>";
+    const name = "<%- name %>";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/ejs@3.1.5/ejs.min.js"></script>
+<script src="/js/main.js"></script>
